@@ -390,112 +390,208 @@
      03 — AEO STRATEGY
 ════════════════════════════════════ -->
 <div id="panel-aeo" class="panel">
-  <h1 class="pg-title">AEO Strategy</h1>
-  <p class="pg-sub">Getting TAG cited when buyers ask AI engines — before they visit any website.</p>
+  <h1 class="pg-title">AI Visibility — Execution Plan</h1>
+  <p class="pg-sub">What Kendra will do, and when.</p>
 
-  <!-- Summary table -->
-  <div class="c-label mb16">What · When · Who Handles It</div>
-  <div class="aeo-wrap mb24">
-    <div class="aeo-row head">
-      <div>Action</div><div>When</div><div>Scope</div><div>Who</div>
+  <style>
+    .cl-section { margin-bottom: 36px; }
+    .cl-group-label {
+      font-size: 0.68rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--teal); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .cl-group-label::after {
+      content: ''; flex: 1; height: 1px; background: rgba(14,165,160,0.2);
+    }
+    .cl-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 14px 18px; margin-bottom: 6px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 9px;
+    }
+    .cl-item:hover { background: rgba(255,255,255,0.07); }
+    .cl-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 2px solid var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+      color: var(--teal); font-size: 0.75rem; font-weight: 700;
+    }
+    .cl-check.done { background: var(--teal); color: var(--navy); }
+    .cl-text { flex: 1; }
+    .cl-action {
+      font-size: 1rem; font-weight: 700; color: #fff;
+      line-height: 1.3; margin-bottom: 3px;
+    }
+    .cl-note {
+      font-size: 0.82rem; color: var(--muted); line-height: 1.35;
+    }
+    .cl-when {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; padding: 3px 9px; border-radius: 20px;
+      white-space: nowrap; flex-shrink: 0; margin-top: 3px;
+      align-self: flex-start;
+    }
+    .w-setup   { background: rgba(129,140,248,0.15); color: #a5b4fc; border: 1px solid rgba(129,140,248,0.25); }
+    .w-launch  { background: rgba(14,165,160,0.15);  color: var(--teal-light); border: 1px solid rgba(14,165,160,0.3); }
+    .w-nurture { background: rgba(16,185,129,0.15);  color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+    .w-opt     { background: rgba(245,158,11,0.12);  color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+
+    .measure-strip {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 10px;
+      margin-bottom: 32px;
+    }
+    .ms-card {
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 9px;
+    }
+    .ms-freq {
+      font-size: 0.65rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--amber); margin-bottom: 6px;
+    }
+    .ms-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .ms-desc  { font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
+
+    .note-box {
+      padding: 14px 18px; border-radius: 9px;
+      background: rgba(245,158,11,0.06);
+      border: 1px solid rgba(245,158,11,0.2);
+      font-size: 0.82rem; color: var(--muted); line-height: 1.6;
+    }
+    .note-box b { color: var(--amber); }
+    @media(max-width:600px) { .measure-strip { grid-template-columns: 1fr; } }
+  </style>
+
+  <!-- SETUP -->
+  <div class="cl-section">
+    <div class="cl-group-label">Month 1 — Setup</div>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Add schema markup to TAG's website</div>
+        <div class="cl-note">Helps AI engines read, parse, and cite TAG content correctly</div>
+      </div>
+      <span class="cl-when w-setup">Day 11</span>
     </div>
-    <div class="aeo-row">
-      <div class="action">Schema markup on TAG website</div>
-      <div class="when">Day 11 (one-time)</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Kendra</div>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Run baseline prompt sweep — 20 queries across ChatGPT, Perplexity, Gemini</div>
+        <div class="cl-note">Documents where TAG stands vs. competitors today</div>
+      </div>
+      <span class="cl-when w-setup">Day 11–12</span>
     </div>
-    <div class="aeo-row">
-      <div class="action">Baseline AI prompt sweep (20 prompts)</div>
-      <div class="when">Day 11–12</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Kendra</div>
-    </div>
-    <div class="aeo-row">
-      <div class="action">AEO-shaped blog content (~30% of Emplibot output)</div>
-      <div class="when">Month 2 onwards</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Kendra</div>
-    </div>
-    <div class="aeo-row">
-      <div class="action">Reddit / Quora seeding (2–3 answers/week)</div>
-      <div class="when">Month 2 onwards</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Kendra</div>
-    </div>
-    <div class="aeo-row">
-      <div class="action">Industry directories (SEIA, EnergySage, Solar Power World)</div>
-      <div class="when">Months 2–4</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Kendra</div>
-    </div>
-    <div class="aeo-row">
-      <div class="action">Wikipedia entry created / expanded</div>
-      <div class="when">Months 2–4</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Kendra</div>
-    </div>
-    <div class="aeo-row">
-      <div class="action">Monthly AI prompt sweep + tracking tool</div>
-      <div class="when">Month 2 onwards</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Kendra</div>
-    </div>
-    <div class="aeo-row">
-      <div class="action">Journalist outbound — earned media (Solar Power World, PV Mag)</div>
-      <div class="when">Months 5–8</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Kendra</div>
-    </div>
-    <div class="aeo-row">
-      <div class="action">Month 6 gap review — assess if specialist PR is needed</div>
-      <div class="when">Month 6</div>
-      <div><span class="scope s-in">In Scope</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Both</div>
-    </div>
-    <div class="aeo-row">
-      <div class="action">Deep PR placements + paid high-authority listicles (if gap remains)</div>
-      <div class="when">Month 6+ if needed</div>
-      <div><span class="scope s-ext">Optional</span></div>
-      <div style="font-size:0.78rem;color:var(--muted);">Specialist / TAG</div>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Set up AI visibility tracking tool</div>
+        <div class="cl-note">Continuous brand mention monitoring across AI engines</div>
+      </div>
+      <span class="cl-when w-setup">Month 1</span>
     </div>
   </div>
 
-  <!-- How we measure -->
-  <div class="c-label mb16">How We Measure</div>
-  <div class="g3 mb28">
-    <div class="card">
-      <div class="c-label" style="color:var(--amber);">Layer 1 — Monthly</div>
-      <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:6px;">Manual Prompt Sweep</div>
-      <div style="font-size:0.78rem;color:var(--muted);line-height:1.5;">20 fixed prompts run 3× each across ChatGPT, Perplexity, Gemini. Track TAG position, competitor positions, month-over-month delta.</div>
+  <!-- CONTENT -->
+  <div class="cl-section">
+    <div class="cl-group-label">Months 2–4 — Content & Citations</div>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Reformat 30% of blog output as Q&amp;A and comparison pieces</div>
+        <div class="cl-note">The formats AI engines actually cite — same tool, different brief</div>
+      </div>
+      <span class="cl-when w-launch">Month 2+</span>
     </div>
-    <div class="card">
-      <div class="c-label" style="color:var(--amber);">Layer 2 — Continuous</div>
-      <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:6px;">AI Tracking Tool</div>
-      <div style="font-size:0.78rem;color:var(--muted);line-height:1.5;">One tool selected Month 1: Profound, Otterly.ai, AthenaHQ, or Peec.ai. Monitors TAG brand mentions across LLMs. Directional signal.</div>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Seed TAG into Reddit &amp; Quora — 2–3 answers per week</div>
+        <div class="cl-note">Plants TAG in threads where buyers research solar financing</div>
+      </div>
+      <span class="cl-when w-launch">Month 2+</span>
     </div>
-    <div class="card">
-      <div class="c-label" style="color:var(--amber);">Layer 3 — Weekly</div>
-      <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:6px;">Leading Indicators</div>
-      <div style="font-size:0.78rem;color:var(--muted);line-height:1.5;">Reddit/Quora answer counts, backlinks (Ahrefs), branded search (GSC), GA4 referrals from ChatGPT / Perplexity / Gemini.</div>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Submit TAG to SEIA, EnergySage, Solar Power World directories</div>
+        <div class="cl-note">Permanent, high-authority citations AI models consistently pull from</div>
+      </div>
+      <span class="cl-when w-launch">Months 2–4</span>
+    </div>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Create TAG Wikipedia entry</div>
+        <div class="cl-note">Highest-trust source for AI — written to Wikipedia neutrality standards</div>
+      </div>
+      <span class="cl-when w-launch">Months 2–4</span>
     </div>
   </div>
 
-  <!-- Detail section at bottom -->
-  <div class="c-label mb16">How It Works — Detail</div>
-  <div class="col">
-    <div class="detail-block">
-      <h4>Why AEO matters now</h4>
-      <p>AI engines (ChatGPT, Perplexity, Gemini) don't browse in real time for most queries — they answer from training data (Reddit, Quora, Wikipedia, blogs), live web search (Bing/Google index), and third-party trust signals (comparison pages, directories, earned media). TAG's own website ranking is not enough. TAG must appear on the sources LLMs trust.</p>
+  <!-- EARNED MEDIA -->
+  <div class="cl-section">
+    <div class="cl-group-label">Months 5–8 — Earned Media</div>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Outreach to Solar Power World, PV Magazine, Greentech Media</div>
+        <div class="cl-note">TAG quoted in trade press — slow-build but compounds over time</div>
+      </div>
+      <span class="cl-when w-nurture">Months 5–8</span>
     </div>
-    <div class="detail-block">
-      <h4>What's in scope (80%)</h4>
-      <p>Schema markup, AEO-shaped content (comparison pages, explainers, Q&A formats), Reddit/Quora seeding, industry directories, Wikipedia, earned media outreach, and monthly/quarterly measurement — all fit inside the existing engagement. No new vendors required through Month 6.</p>
+
+    <div class="cl-item">
+      <div class="cl-check">✓</div>
+      <div class="cl-text">
+        <div class="cl-action">Month 6 visibility review — assess remaining gaps</div>
+        <div class="cl-note">If gaps persist, specialist PR or paid listicle placement is evaluated</div>
+      </div>
+      <span class="cl-when w-nurture">Month 6</span>
     </div>
-    <div class="detail-block">
-      <h4>The 20% — optional, assessed at Month 6</h4>
-      <p>Deep PR placements in major trade publications and paid review-site listings (e.g., "Top 10 Solar Financing Companies 2026" — ~$500–2,000 one-time per placement) sit outside standard content scope. Evaluated at the Month 6 AI visibility audit. If a specific gap remains and a specialist PR firm would close it faster, that recommendation is made then — not before.</p>
+
+    <div class="cl-item" style="opacity:0.75;">
+      <div class="cl-check" style="border-color:var(--amber);color:var(--amber);">?</div>
+      <div class="cl-text">
+        <div class="cl-action" style="color:#fcd34d;">Paid listicle placement or specialist PR (if needed)</div>
+        <div class="cl-note">Only if Month 6 audit shows a specific gap — not before</div>
+      </div>
+      <span class="cl-when w-opt">Optional</span>
     </div>
+  </div>
+
+  <!-- MEASUREMENT -->
+  <div class="cl-group-label" style="margin-bottom:14px;">Ongoing — Measurement</div>
+  <div class="measure-strip">
+    <div class="ms-card">
+      <div class="ms-freq">Monthly</div>
+      <div class="ms-title">Prompt Sweep</div>
+      <div class="ms-desc">20 prompts × 3 runs across ChatGPT, Perplexity, Gemini — TAG position vs. competitors</div>
+    </div>
+    <div class="ms-card">
+      <div class="ms-freq">Continuous</div>
+      <div class="ms-title">Tracking Tool</div>
+      <div class="ms-desc">Profound / Otterly.ai / Peec.ai — automatic brand mention monitoring</div>
+    </div>
+    <div class="ms-card">
+      <div class="ms-freq">Weekly</div>
+      <div class="ms-title">Leading Indicators</div>
+      <div class="ms-desc">Reddit/Quora counts · backlinks · branded search · AI referrals in GA4</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <b>80% handled inside this engagement.</b> Schema markup, content, seeding, directories, Wikipedia, earned media outreach, and measurement. The remaining <b>20%</b> (deep PR placements, paid review-site listings) is assessed at Month 6 only if a gap remains.
   </div>
 </div>
 
